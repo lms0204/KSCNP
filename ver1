@@ -1,0 +1,278 @@
+import tkinter as tk
+from tkinter import ttk
+from tkinter.constants import ANCHOR, X
+
+
+
+
+win=tk.Tk()
+win.title("KSCNP")
+
+#라벨, 만들기 클래스
+
+class LabelClass(tk.Tk):
+    def __init__(self):
+        
+        pass
+
+    def Make_label(self,num1,num2,text):
+        self.label1=tk.Label(place_of_order,text=text,padx=5,pady=5)
+        self.label1.grid(column=num1,row=num2)
+
+    def Make_label2(self,num1,num2,text):
+        self.label1=tk.Label(product_information,text=text,padx=5,pady=5)
+        self.label1.grid(column=num1,row=num2)
+    
+    def Make_label3(self,num1,num2,text):
+        self.label1=tk.Label(printing_information_ouput,text=text,padx=5,pady=5)
+        self.label1.grid(column=num1,row=num2)
+
+    def Make_label4(self,num1,num2,text):
+        self.label1=tk.Label(printing_information_kscnp,text=text,padx=5,pady=5)
+        self.label1.grid(column=num1,row=num2)
+        
+def click_here():
+    pass
+               
+      
+bt1=ttk.Button(win,text="click", command=click_here, width=10)
+bt1.grid(column=5,row=5)
+
+
+
+    ### 프레임 1 ###
+title_frame=tk.LabelFrame(win,text="제품 공정도",width=500,height=50,labelanchor='n',font='HY견고딕 17')
+title_frame.grid(column=0, row=0, sticky="ew")
+
+
+      ### 발주처 프레임 ###
+place_of_order=tk.LabelFrame(title_frame,text="발주처",font='나눔고딕 13 bold',padx=10,pady=10,width=300,height=200)
+place_of_order.grid(column=0,row=0, sticky="ew")
+
+       ### 접수일자 ###
+order_date=ttk.Label(place_of_order,text="접수일자 ")
+order_date.grid(column=1,row=0)
+
+or_date=tk.StringVar()
+order_date_entry=ttk.Entry(place_of_order,width=24,textvariable=or_date)
+order_date_entry.grid(column=2,row=0)
+
+      ### 제품 넘버 ###
+
+product_num=ttk.Label(place_of_order,text="제품 No.")
+product_num.grid(column=1,row=1)
+
+pd_num=tk.StringVar()
+product_num_entry=ttk.Entry(place_of_order,width=24, textvariable=pd_num)
+product_num_entry.grid(column=2,row=1)
+
+      ### 발주 업체 ###
+
+ordering_company=ttk.Label(place_of_order,text="발주업체 ")
+ordering_company.grid(column=1,row=2)
+
+or_company=tk.StringVar()
+ordering_company_entry=ttk.Entry(place_of_order,width=24,textvariable=or_company)
+ordering_company_entry.grid(column=2,row=2)
+
+
+
+        ### 납품일자 ###
+product_date=LabelClass().Make_label(3,0,"납품일자")
+date_num=tk.StringVar()
+product_date_entry=ttk.Entry(place_of_order,width=24,textvariable=date_num)
+product_date_entry.grid(column=4,row=0)
+
+        ### 수량 ###
+product_quantity=LabelClass().Make_label(3,1,"수량")
+quantity_num=tk.StringVar()
+product_quantity_entry=ttk.Entry(place_of_order,width=24,textvariable=quantity_num)
+product_quantity_entry.grid(column=4,row=1)
+
+        ### 제품명 ###
+product_name=LabelClass().Make_label(3,2,"제품명")
+product_name_str=tk.StringVar()
+product_name_entry=ttk.Entry(place_of_order,width=24,textvariable=product_name_str)
+product_name_entry.grid(column=4,row=2)
+
+
+        ### 제품 코드 ###
+product_code=LabelClass().Make_label(3,3,"제품 코드")
+product_code_str=tk.StringVar()
+product_code_entry=ttk.Entry(place_of_order,width=24,textvariable=product_code_str)
+product_code_entry.grid(column=4,row=3)
+
+
+    ### 제품사양 정보 ###
+
+product_information=tk.LabelFrame(title_frame,text="제품사양 정보-자재",font='나눔고딕 13 bold',padx=10,pady=10,width=200,height=200)
+product_information.grid(column=0,row=1)
+
+
+    ### 제품사양 정보 - 자재 - 거래처 ###
+
+product_information_material_company=LabelClass().Make_label2(0,0,"거래처")
+product_information_material_company_str=tk.StringVar()
+product_information_material_company_entry=ttk.Entry(product_information,width=12,textvariable=product_information_material_company_str)
+product_information_material_company_entry.grid(column=0,row=1,padx=5,pady=5)
+
+product_information_material_company_str2=tk.StringVar()
+product_information_material_company_entry2=ttk.Entry(product_information,width=12,textvariable=product_information_material_company_str2)
+product_information_material_company_entry2.grid(column=0,row=2,padx=5,pady=5)
+
+product_information_material_company_str3=tk.StringVar()
+product_information_material_company_entry3=ttk.Entry(product_information,width=12,textvariable=product_information_material_company_str3)
+product_information_material_company_entry3.grid(column=0,row=3,padx=5,pady=5)
+
+product_information_material_company_str4=tk.StringVar()
+product_information_material_company_entry4=ttk.Entry(product_information,width=12,textvariable=product_information_material_company_str4)
+product_information_material_company_entry4.grid(column=0,row=4,padx=5,pady=5)
+
+
+    ### 제품사양 정보 - 자재 - 지종 ###
+product_information_material_paper=LabelClass().Make_label2(1,0,"지종")
+product_information_material_paper_str=tk.StringVar()
+product_information_material_paper_entry=ttk.Entry(product_information,width=12,textvariable=product_information_material_paper_str)
+product_information_material_paper_entry.grid(column=1,row=1,padx=5,pady=5)
+
+product_information_material_paper_str2=tk.StringVar()
+product_information_material_paper_entry2=ttk.Entry(product_information,width=12,textvariable=product_information_material_paper_str2)
+product_information_material_paper_entry2.grid(column=1,row=2,padx=5,pady=5)
+
+product_information_material_paper_str3=tk.StringVar()
+product_information_material_paper_entry3=ttk.Entry(product_information,width=12,textvariable=product_information_material_paper_str3)
+product_information_material_paper_entry3.grid(column=1,row=3,padx=5,pady=5)
+
+product_information_material_paper_str4=tk.StringVar()
+product_information_material_paper_entry4=ttk.Entry(product_information,width=12,textvariable=product_information_material_paper_str4)
+product_information_material_paper_entry4.grid(column=1,row=4,padx=5,pady=5)
+
+
+    ### 제품사양 정보 - 자재 - 규경 ###
+product_information_material_size=LabelClass().Make_label2(2,0,"규격")
+product_information_material_size_str=tk.StringVar()
+product_information_material_size_entry=ttk.Entry(product_information,width=12,textvariable=product_information_material_size_str)
+product_information_material_size_entry.grid(column=2,row=1,padx=5,pady=5)
+
+product_information_material_size_str2=tk.StringVar()
+product_information_material_size_entry2=ttk.Entry(product_information,width=12,textvariable=product_information_material_size_str2)
+product_information_material_size_entry2.grid(column=2,row=2,padx=5,pady=5)
+
+product_information_material_size_str3=tk.StringVar()
+product_information_material_size_entry3=ttk.Entry(product_information,width=12,textvariable=product_information_material_size_str3)
+product_information_material_size_entry3.grid(column=2,row=3,padx=5,pady=5)
+
+product_information_material_size_str4=tk.StringVar()
+product_information_material_size_entry4=ttk.Entry(product_information,width=12,textvariable=product_information_material_size_str4)
+product_information_material_size_entry4.grid(column=2,row=4,padx=5,pady=5)
+    ### 제품사양 정보 - 자재 - 재단 ###
+product_information_material_cutting=LabelClass().Make_label2(3,0,"재단")
+product_information_material_cutting_str=tk.StringVar()
+product_information_material_cutting_entry=ttk.Entry(product_information,width=12,textvariable=product_information_material_cutting_str)
+product_information_material_cutting_entry.grid(column=3,row=1,padx=5,pady=5)
+
+product_information_material_cutting_str2=tk.StringVar()
+product_information_material_cutting_entry2=ttk.Entry(product_information,width=12,textvariable=product_information_material_cutting_str2)
+product_information_material_cutting_entry2.grid(column=3,row=2,padx=5,pady=5)
+
+product_information_material_cutting_str3=tk.StringVar()
+product_information_material_cutting_entry3=ttk.Entry(product_information,width=12,textvariable=product_information_material_cutting_str3)
+product_information_material_cutting_entry3.grid(column=3,row=3,padx=5,pady=5)
+
+product_information_material_cutting_str4=tk.StringVar()
+product_information_material_cutting_entry4=ttk.Entry(product_information,width=12,textvariable=product_information_material_cutting_str4)
+product_information_material_cutting_entry4.grid(column=3,row=4,padx=5,pady=5)
+
+    ### 제품사양 정보 - 자재 - 수량 ###
+product_information_material_quantity=LabelClass().Make_label2(4,0,"수량")
+product_information_material_quantity_str=tk.StringVar()
+product_information_material_quantity_entry=ttk.Entry(product_information,width=12,textvariable=product_information_material_quantity_str)
+product_information_material_quantity_entry.grid(column=4,row=1,padx=5,pady=5)
+
+product_information_material_quantity_str2=tk.StringVar()
+product_information_material_quantity_entry2=ttk.Entry(product_information,width=12,textvariable=product_information_material_quantity_str2)
+product_information_material_quantity_entry2.grid(column=4,row=2,padx=5,pady=5)
+
+product_information_material_quantity_str3=tk.StringVar()
+product_information_material_quantity_entry3=ttk.Entry(product_information,width=12,textvariable=product_information_material_quantity_str3)
+product_information_material_quantity_entry3.grid(column=4,row=3,padx=5,pady=5)
+
+product_information_material_quantity_str4=tk.StringVar()
+product_information_material_quantity_entry4=ttk.Entry(product_information,width=12,textvariable=product_information_material_quantity_str4)
+product_information_material_quantity_entry4.grid(column=4,row=4,padx=5,pady=5)
+
+
+    ### 인쇄 정보 ###
+
+printing_information=tk.LabelFrame(title_frame,text="인쇄정보",font='나눔고딕 13 bold',padx=10,pady=10,width=200,height=200)
+printing_information.grid(column=0,row=2, sticky="ew")
+
+        ###인쇄정보 - 출력정보 ###
+
+printing_information_ouput=tk.LabelFrame(printing_information,text="출력정보",font='나눔고딕 13', padx=10,pady=10,width=200,height=200)
+printing_information_ouput.grid(column=0, row=0,sticky="ew")
+
+
+            ### 인쇄정보 - 출력정보 - 수정차수 ###
+printing_information_ouput_label1=LabelClass().Make_label3(0,0,'수정차수')
+printing_information_ouput_label1_str=tk.StringVar()
+printing_information_ouput_label1_entry=tk.Entry(printing_information_ouput,width=12,textvariable=printing_information_ouput_label1)
+printing_information_ouput_label1_entry.grid(column=1, row=0)
+
+            ### 인쇄정보 - 출력정보 - 수정내역 ###
+printing_information_ouput_label2=LabelClass().Make_label3(0,1,'수정내역')
+printing_information_ouput_label2_str=tk.StringVar()
+printing_information_ouput_label2_entry=tk.Entry(printing_information_ouput,width=12,textvariable=printing_information_ouput_label2)
+printing_information_ouput_label2_entry.grid(column=1, row=1)
+
+            ### 인쇄정보 - 출력정보 - 출력 ###
+printing_information_ouput_label3=LabelClass().Make_label3(0,2,'출력')
+printing_information_ouput_label3_str=tk.StringVar()
+printing_information_ouput_label3_entry=tk.Entry(printing_information_ouput,width=12,textvariable=printing_information_ouput_label3)
+printing_information_ouput_label3_entry.grid(column=1, row=2)
+
+            ### 인쇄정보 - 출력정보 - 출력실 ###
+printing_information_ouput_label4=LabelClass().Make_label3(0,3,'출력실')
+printing_information_ouput_label4_str=tk.StringVar()
+printing_information_ouput_label4_entry=tk.Entry(printing_information_ouput,width=12,textvariable=printing_information_ouput_label4)
+printing_information_ouput_label4_entry.grid(column=1, row=3)
+
+            ### 인쇄정보 - 출력정보 - 수정일자 ###
+printing_information_ouput_label5=LabelClass().Make_label3(0,4,'수정일자')
+printing_information_ouput_label5_str=tk.StringVar()
+printing_information_ouput_label5_entry=tk.Entry(printing_information_ouput,width=12,textvariable=printing_information_ouput_label5)
+printing_information_ouput_label5_entry.grid(column=1, row=4)
+
+            ### 인쇄정보 - 출력정보 - 담당 ###
+printing_information_ouput_label6=LabelClass().Make_label3(0,5,'담당')
+printing_information_ouput_label6_str=tk.StringVar()
+printing_information_ouput_label6_entry=tk.Entry(printing_information_ouput,width=12,textvariable=printing_information_ouput_label6)
+printing_information_ouput_label6_entry.grid(column=1, row=5)
+
+
+
+        ###인쇄정보 - 광성 ###
+
+printing_information_kscnp=tk.LabelFrame(printing_information,text="광성",font='나눔고딕 13', padx=10,pady=10,width=200,height=200)
+printing_information_kscnp.grid(column=1, row=0,sticky='ew')
+
+
+            ###인쇄정보 - 광성 ###
+printing_information_kscnp_label1=LabelClass().Make_label4(0,0,'제품NO/분류')
+
+printing_information_kscnp_label1_entry=tk.Entry(printing_information_kscnp,width=12,textvariable=pd_num)
+printing_information_kscnp_label1_entry.grid(column=1, row=0)
+
+printing_information_kscnp_label1_str=tk.StringVar()
+printing_information_kscnp_label1_entry2=tk.Entry(printing_information_kscnp,width=12,textvariable=printing_information_kscnp_label1_str)
+printing_information_kscnp_label1_entry2.grid(column=2, row=0)
+
+### 프레임 2 ###
+
+title_frame2=tk.LabelFrame(win,text="제품 규격",width=200,height=50,font='HY견고딕 17',labelanchor='n')
+title_frame2.grid(column=1, row=0)
+
+
+
+
+win.mainloop()
